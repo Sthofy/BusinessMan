@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="BusinessMan.View.MainView"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:contentView="clr-namespace:BusinessMan.View"
+             xmlns:viewModel="clr-namespace:BusinessMan.ViewModel"
+             Title="MainView">
+    <Grid />
+</ContentPage>
