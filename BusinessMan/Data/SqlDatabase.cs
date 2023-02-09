@@ -34,5 +34,11 @@ namespace BusinessMan.Data
 
             return await _connection.InsertAsync(user);
         }
+
+        public async Task<int> RemoveUserAsync(User user)
+        {
+            await Init();
+            return await _connection.DeleteAsync(user);
+        }
     }
 }
