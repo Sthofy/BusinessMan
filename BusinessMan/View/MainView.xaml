@@ -2,8 +2,28 @@
 <ContentPage x:Class="BusinessMan.View.MainView"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:contentView="clr-namespace:BusinessMan.View"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel="clr-namespace:BusinessMan.ViewModel"
-             Title="MainView">
-    <Grid />
+             Title="Business Man">
+
+    <Grid>
+        <Switch OnColor="Red" ThumbColor="Green">
+            <Switch.Behaviors>
+                <toolkit:EventToCommandBehavior Command="{Binding ChangeBtnToVisibleCommand}" EventName="Toggled" />
+            </Switch.Behaviors>
+        </Switch>
+        <StackLayout IsVisible="{Binding IsVisible}">
+            <Label Text="Welcome the Business Man Game" />
+            <Label Text="Please create yout profile" />
+            <Entry Placeholder="Name" Text="{Binding Username}" />
+            <Button Command="{Binding AddUserCommand}" Text="Create" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsNotVisible}">
+            <Label Text="Hello" />
+            <Button BackgroundColor="Red"
+                    Command="{Binding DeleteUserCommand}"
+                    IsVisible="{Binding IsBtnVisible}"
+                    Text="Delete User" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

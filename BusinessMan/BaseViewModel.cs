@@ -4,19 +4,22 @@
     public partial class BaseViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _title;
+        string _title;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        private bool _isBusy;
+        bool _isBusy;
 
         [ObservableProperty]
-        private bool _isEnabled;
+        [NotifyPropertyChangedFor(nameof(IsNotVisible))]
+        bool _isVisible;
+
 
         [ObservableProperty]
-        private string _pageState;
+        string _pageState;
 
-        public bool IsNotBusy => !IsBusy;
+        public bool IsNotBusy => !_isBusy;
+        public bool IsNotVisible => !_isVisible;
 
         public BaseViewModel() { }
     }

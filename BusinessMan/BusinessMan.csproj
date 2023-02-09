@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
@@ -59,9 +60,10 @@
 	  <MauiXaml Update="View\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\NewContent1.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Shared\" />
 	</ItemGroup>
 
 </Project>
