@@ -9,12 +9,14 @@
         bool _isBtnVisible = false;
 
         private readonly SqlDatabase _database;
+        private readonly ISharedData _sharedData;
 
         public Task Init { get; }
 
-        public MainViewModel(SqlDatabase database)
+        public MainViewModel(SqlDatabase database, ISharedData sharedData)
         {
             _database = database;
+            _sharedData = sharedData;
             Init = Initailize();
         }
 
@@ -33,6 +35,8 @@
             }
             else
             {
+                _sharedData.User = result;
+
                 IsVisible = false;
             }
         }
@@ -58,6 +62,7 @@
             var result = await _database.RemoveUserAsync(user);
 
             IsVisible = !IsVisible;
+            _sharedData.User = null;
         }
 
         [RelayCommand]

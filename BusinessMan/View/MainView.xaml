@@ -4,21 +4,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel="clr-namespace:BusinessMan.ViewModel"
-             Title="Business Man">
+             Title="Earnings"
+             Shell.TabBarIsVisible="{Binding IsNotVisible}">
 
-    <Grid>
-        <Switch OnColor="Red" ThumbColor="Green">
-            <Switch.Behaviors>
-                <toolkit:EventToCommandBehavior Command="{Binding ChangeBtnToVisibleCommand}" EventName="Toggled" />
-            </Switch.Behaviors>
-        </Switch>
-        <StackLayout IsVisible="{Binding IsVisible}">
+    <Grid RowDefinitions="35,*">
+        <HorizontalStackLayout Spacing="40">
+            <Label Text="God Mode" />
+            <Switch OnColor="Red" ThumbColor="Green">
+                <Switch.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding ChangeBtnToVisibleCommand}" EventName="Toggled" />
+                </Switch.Behaviors>
+            </Switch>
+        </HorizontalStackLayout>
+        <StackLayout Grid.Row="1" IsVisible="{Binding IsVisible}">
             <Label Text="Welcome the Business Man Game" />
             <Label Text="Please create yout profile" />
             <Entry Placeholder="Name" Text="{Binding Username}" />
             <Button Command="{Binding AddUserCommand}" Text="Create" />
         </StackLayout>
-        <StackLayout IsVisible="{Binding IsNotVisible}">
+        <StackLayout Grid.Row="1" IsVisible="{Binding IsNotVisible}">
             <Label Text="Hello" />
             <Button BackgroundColor="Red"
                     Command="{Binding DeleteUserCommand}"

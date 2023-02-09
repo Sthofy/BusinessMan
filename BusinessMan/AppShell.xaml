@@ -5,8 +5,19 @@
        xmlns:local="clr-namespace:BusinessMan.View"
        Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent Title="Home"
-                  ContentTemplate="{DataTemplate local:MainView}"
-                  Route="MainView" />
+
+    <TabBar>
+        <Tab Title="Business">
+            <ShellContent Title="MainPage"
+                          ContentTemplate="{DataTemplate local:MainView}"
+                          Route="MainView" />
+        </Tab>
+        <Tab Title="Earnings">
+            <ShellContent x:Name="MainPage"
+                          Title="MainPage"
+                          ContentTemplate="{DataTemplate local:MainView}"
+                          Route="MainView" />
+        </Tab>
+    </TabBar>
 
 </Shell>
