@@ -57,13 +57,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Shared\BusinessCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Shared\" />
 	</ItemGroup>
 
 </Project>

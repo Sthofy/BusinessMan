@@ -2,6 +2,7 @@
 <ContentPage x:Class="BusinessMan.View.MainView"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:contentView="clr-namespace:BusinessMan.Shared"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel="clr-namespace:BusinessMan.ViewModel"
              Title="Earnings"
@@ -28,6 +29,17 @@
                     Command="{Binding DeleteUserCommand}"
                     IsVisible="{Binding IsBtnVisible}"
                     Text="Delete User" />
+            <contentView:BusinessCard BusinessImageSource="dotnet_bot.svg"
+                                      BusinessName="Test Business"
+                                      BusinessType="Car Mechanic"
+                                      Income="$ 10000000"
+                                      NavigateImageSource="dotnet_bot.svg" />
+
+            <contentView:BusinessCard BusinessImageSource="dotnet_bot.svg"
+                                      BusinessName="Test Business"
+                                      BusinessType="Car Mechanic"
+                                      Income="$ 10000000"
+                                      NavigateImageSource="dotnet_bot.svg" />
         </StackLayout>
     </Grid>
 </ContentPage>

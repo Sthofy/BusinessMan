@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="BusinessMan.Shared.BusinessCard"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this">
+    <Grid Margin="10,5,10,5">
+        <Frame BindingContext="{x:Reference this}">
+            <Frame.GestureRecognizers />
+
+            <Grid ColumnDefinitions="*,40"
+                  RowDefinitions="30,*"
+                  RowSpacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Grid.RowSpan="2"
+                           Grid.Column="1"
+                           Source="{Binding BusinessImageSource, FallbackValue='dotnet_bot.svg'}" />
+
+                    <VerticalStackLayout>
+                        <Label Text="{Binding BusinessName, FallbackValue='Businsess Name'}" />
+                        <Label Text="{Binding BusinessType, FallbackValue='Business Type'}" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="1" Spacing="10">
+                    <Label Text="{Binding Income, FallbackValue='$ Income'}" />
+                    <Label Text="per hour" />
+                </HorizontalStackLayout>
+                <Image Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Source="{Binding NavigateImageSource, FallbackValue='dotnet_bot.svg'}" />
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentView>
